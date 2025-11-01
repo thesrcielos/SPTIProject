@@ -32,6 +32,7 @@ public class VulnerableApp {
     @PostMapping("/api/data")
     public String processData(@RequestBody String data) {
         logger.error("Datos procesados: {}", data);
+
         return "Procesado: " + data;
     }
 
