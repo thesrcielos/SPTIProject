@@ -34,7 +34,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-      #  Escanear dependencias (SCA)
+      #  Escanear dependencias (SCA) 
       - name: Snyk Open Source (Maven dependencies)
         run: snyk test --sarif-file-output=snyk-deps.sarif
         env:
