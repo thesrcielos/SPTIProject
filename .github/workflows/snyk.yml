@@ -60,7 +60,7 @@ jobs:
         with:
           sarif_file: snyk-code.sarif
           category: snyk-code
-
+ 
       # (Opcional) Monitorear en Snyk dashboard
       - name: Monitor project in Snyk
         run: snyk monitor --project-name="${{ github.repository }}" || true
