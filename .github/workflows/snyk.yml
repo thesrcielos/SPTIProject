@@ -22,16 +22,21 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17' # Cambia si usas otra versión
+          java-version: '17'
 
       - name: Build project with Maven
         run: mvn -B package --file pom.xml
 
-      # 🧩 Análisis de dependencias (SCA)
+      
+      - name: Export JAVA_HOME
+        run: echo "JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))" >> $GITHUB_ENV
+
+      # Análisis de dependencias (SCA)
       - name: Run Snyk Open Source (Maven dependencies)
         uses: snyk/actions/maven@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          JAVA_HOME: ${{ env.JAVA_HOME }}
         with:
           args: --sarif-file-output=snyk-deps.sarif
 
