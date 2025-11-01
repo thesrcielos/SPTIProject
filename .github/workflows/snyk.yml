@@ -18,45 +18,41 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Java
+      - name: Set up JDK 8
         uses: actions/setup-java@v4
         with:
+          java-version: '8'
           distribution: 'temurin'
-          java-version: '17'
+          cache: maven
+
 
       - name: Build project with Maven
         run: mvn -B package --file pom.xml
 
-      
-      - name: Export JAVA_HOME
-        run: echo "JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))" >> $GITHUB_ENV
-
-      # Análisis de dependencias (SCA)
-      - name: Run Snyk Open Source (Maven dependencies)
-        uses: snyk/actions/maven@master
+      #  Instalar Snyk CLI
+      - name: Set up Snyk CLI
+        uses: snyk/actions/setup@v4
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-          JAVA_HOME: ${{ env.JAVA_HOME }}
-        with:
-          args: --sarif-file-output=snyk-deps.sarif
 
-      - name: Upload Snyk dependency results to GitHub Code Scanning
+      #  Escanear dependencias (SCA)
+      - name: Snyk Open Source (Maven dependencies)
+        run: snyk test --sarif-file-output=snyk-deps.sarif
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      - name: Upload dependency scan results
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk-deps.sarif
 
-      # 🔍 Análisis de código (SAST)
-      - name: Install Snyk CLI
-        uses: snyk/actions/setup@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
-      - name: Run Snyk Code (SAST)
+      #  Escanear código fuente (SAST)
+      - name: Snyk Code (SAST)
         run: snyk code test --sarif > snyk-code.sarif || true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-      - name: Upload Snyk Code results to GitHub Code Scanning
+      - name: Upload SAST results
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk-code.sarif
