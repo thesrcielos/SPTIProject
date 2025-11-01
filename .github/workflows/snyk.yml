@@ -25,13 +25,12 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-
       - name: Build project with Maven
         run: mvn -B package --file pom.xml
 
       #  Instalar Snyk CLI
       - name: Set up Snyk CLI
-        uses: snyk/actions/setup@v4
+        uses: snyk/actions/setup@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
