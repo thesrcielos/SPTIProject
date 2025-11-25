@@ -77,3 +77,27 @@
 2025-11-01 18:29:19.207 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
 2025-11-01 18:29:19.271 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 2025-11-01 18:29:19.281 [main] INFO  com.miempresa.VulnerableApp - Started VulnerableApp in 2.287 seconds (JVM running for 3.309)
+2025-11-24 20:08:55.023 [main] INFO  com.miempresa.VulnerableApp - Starting VulnerableApp using Java 23.0.1 on diego with PID 3016 (C:\Users\diego\Downloads\sptiproject\sptiproject\target\classes started by diego in C:\Users\diego\Downloads\sptiproject\sptiproject)
+2025-11-24 20:08:55.029 [main] DEBUG com.miempresa.VulnerableApp - Running with Spring Boot v2.6.4, Spring v5.3.16
+2025-11-24 20:08:55.036 [main] INFO  com.miempresa.VulnerableApp - No active profile set, falling back to 1 default profile: "default"
+2025-11-24 20:08:56.563 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-11-24 20:08:56.589 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-24 20:08:56.591 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-24 20:08:56.591 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2025-11-24 20:08:56.714 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-24 20:08:56.715 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1573 ms
+2025-11-24 20:08:57.254 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-11-24 20:08:57.315 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-11-24 20:08:57.327 [main] INFO  com.miempresa.VulnerableApp - Started VulnerableApp in 2.933 seconds (JVM running for 7.616)
+2025-11-24 20:09:03.125 [main] INFO  com.miempresa.VulnerableApp - Starting VulnerableApp using Java 23.0.1 on diego with PID 2328 (C:\Users\diego\Downloads\sptiproject\sptiproject\target\classes started by diego in C:\Users\diego\Downloads\sptiproject\sptiproject)
+2025-11-24 20:09:03.132 [main] DEBUG com.miempresa.VulnerableApp - Running with Spring Boot v2.6.4, Spring v5.3.16
+2025-11-24 20:09:03.134 [main] INFO  com.miempresa.VulnerableApp - No active profile set, falling back to 1 default profile: "default"
+2025-11-24 20:09:04.428 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-11-24 20:09:04.447 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-24 20:09:04.448 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-24 20:09:04.448 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2025-11-24 20:09:04.530 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-24 20:09:04.531 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1309 ms
+2025-11-24 20:09:04.930 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-11-24 20:09:04.991 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-11-24 20:09:05.001 [main] INFO  com.miempresa.VulnerableApp - Started VulnerableApp in 2.328 seconds (JVM running for 3.468)

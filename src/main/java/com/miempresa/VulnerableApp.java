@@ -17,6 +17,16 @@ public class VulnerableApp {
         System.out.println("APLICACION VULNERABLE INICIADA - Puerto 8080");
     }
 
+    @GetMapping("/api/login")
+    public String login(@RequestHeader(value = "X-Api-Version", defaultValue = "1.0") String apiVersion) {
+        // AQUÍ ESTÁ LA VULNERABILIDAD:
+        // Logueamos lo que nos manda el usuario sin sanitizar.
+        // Si mandan "${jndi:ldap://...}", Log4j intentará resolverlo.
+        logger.info("Intento de acceso con versión de API: " + apiVersion);
+
+        return "Login procesado (versión: " + apiVersion + ")";
+    }
+
     @PostMapping("/log")
     public String logUserInput(@RequestHeader("User-Agent") String userAgent) {
         logger.info("User-Agent recibido: {}", userAgent);
